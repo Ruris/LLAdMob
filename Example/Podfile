@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'LLAdMob_Example' do
+  pod 'LLAdMob', :path => '../'
+
+  target 'LLAdMob_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

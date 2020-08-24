@@ -1,0 +1,16 @@
+PODS:
+  - LLAdMob (0.1.0)
+
+DEPENDENCIES:
+  - LLAdMob (from `../`)
+
+EXTERNAL SOURCES:
+  LLAdMob:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LLAdMob: f072a3d3e0be8a3bd756135cfa62863b3bbd699e
+
+PODFILE CHECKSUM: 31e5c56a58c5289d2605d802331e96fd80b800fc
+
+COCOAPODS: 1.9.3
