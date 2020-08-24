@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DCB648499A74BD83B3D5338 /* Pods_LLAdMob_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4F16B01E375DC47ECBC346 /* Pods_LLAdMob_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,9 +20,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		681AD0B9DEBB2BC9BB9CB9EA /* Pods_LLAdMob_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F422736357971A03AC8E074 /* Pods_LLAdMob_Tests.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9363B251439C6B247065DD6D /* libPods-LLAdMob_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1047EFB1D65E271C13B81D /* libPods-LLAdMob_Tests.a */; };
+		F9E7BB3B70B7B1ACAD2FAB8B /* libPods-LLAdMob_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C00F94364CEE018664ECFAD /* libPods-LLAdMob_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13D4FB44F0CDC2DB5DBD5A1A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		2F422736357971A03AC8E074 /* Pods_LLAdMob_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLAdMob_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DEC8A1C07E8A93F1274D701 /* LLAdMob.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = LLAdMob.podspec; path = ../LLAdMob.podspec; sourceTree = "<group>"; };
+		13D4FB44F0CDC2DB5DBD5A1A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3DEC8A1C07E8A93F1274D701 /* LLAdMob.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LLAdMob.podspec; path = ../LLAdMob.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4E1047EFB1D65E271C13B81D /* libPods-LLAdMob_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLAdMob_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE77E856B4DC3EC9136A1E8 /* Pods-LLAdMob_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Example.release.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LLAdMob_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLAdMob_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,12 +60,12 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6E4F16B01E375DC47ECBC346 /* Pods_LLAdMob_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLAdMob_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7C00F94364CEE018664ECFAD /* libPods-LLAdMob_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLAdMob_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE5CDA2D14D10963EC7BA08B /* Pods-LLAdMob_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Example.debug.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D33FE55406859F9AC7FC26E9 /* Pods-LLAdMob_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Tests/Pods-LLAdMob_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFBBE925D7AD4D7240061007 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EFBBE925D7AD4D7240061007 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2165A7C6467635519B131F3 /* Pods-LLAdMob_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Tests.release.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Tests/Pods-LLAdMob_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				1DCB648499A74BD83B3D5338 /* Pods_LLAdMob_Example.framework in Frameworks */,
+				F9E7BB3B70B7B1ACAD2FAB8B /* libPods-LLAdMob_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				681AD0B9DEBB2BC9BB9CB9EA /* Pods_LLAdMob_Tests.framework in Frameworks */,
+				9363B251439C6B247065DD6D /* libPods-LLAdMob_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				6E4F16B01E375DC47ECBC346 /* Pods_LLAdMob_Example.framework */,
-				2F422736357971A03AC8E074 /* Pods_LLAdMob_Tests.framework */,
+				7C00F94364CEE018664ECFAD /* libPods-LLAdMob_Example.a */,
+				4E1047EFB1D65E271C13B81D /* libPods-LLAdMob_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,7 +193,6 @@
 				D33FE55406859F9AC7FC26E9 /* Pods-LLAdMob_Tests.debug.xcconfig */,
 				F2165A7C6467635519B131F3 /* Pods-LLAdMob_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +207,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				AF016D9D4945402E9ECE7DF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +256,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -295,24 +294,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AF016D9D4945402E9ECE7DF5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LLAdMob/LLAdMob.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLAdMob.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B637060F6A55A94E79960FC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
