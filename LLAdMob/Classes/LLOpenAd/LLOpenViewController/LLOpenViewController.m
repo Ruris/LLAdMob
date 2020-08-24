@@ -44,17 +44,12 @@
 #pragma mark - UI
 
 - (void)setupUI {
-    self.view.backgroundColor = UIColor.whiteColor;
-    if (@available(iOS 13.0, *)) {
-        self.loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
-    } else {
-        self.loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    }
-    [_loadingView startAnimating];
     
+    self.view.backgroundColor = UIColor.whiteColor;
     
     [self.view addSubview:_loadingView];
     
+    [_loadingView startAnimating];
     _loadingView.center = self.view.center;
 }
 
@@ -76,6 +71,8 @@
 
 #pragma mark - Ad
 
+/// 加载插页
+/// @param identifier 插页标识符
 - (void)loadInterstitialWithIdentifier:(NSString *)identifier {
     self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:identifier];
     _interstitial.delegate = self;
@@ -128,6 +125,19 @@
 /// before this.
 - (void)interstitialWillLeaveApplication:(nonnull GADInterstitial *)ad {
     
+}
+
+#pragma mark - Getter
+
+- (UIActivityIndicatorView *)loadingView {
+    if (_loadingView == nil) {
+        if (@available(iOS 13.0, *)) {
+            self.loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
+        } else {
+            self.loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        }
+    }
+    return _loadingView;
 }
 
 @end
