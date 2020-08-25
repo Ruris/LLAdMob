@@ -20,6 +20,9 @@
 /// 是否加载完成
 @property (nonatomic, assign) BOOL finishLoading;
 
+/// 是否正在移除
+@property (nonatomic, assign) BOOL isRemoving;
+
 @end
 
 @implementation LLOpenViewController
@@ -47,7 +50,7 @@
     
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [self.view addSubview:_loadingView];
+    [self.view addSubview:self.loadingView];
     
     [_loadingView startAnimating];
     _loadingView.center = self.view.center;
@@ -62,6 +65,8 @@
 
 /// 隐藏并移除视图
 - (void)hiddenAndRemove {
+    /// 标记为正在移除
+    _isRemoving = YES;
     [UIView animateWithDuration:1.0 animations:^{
         self.openWindow.alpha = 0.0;
     } completion:^(BOOL finished) {
@@ -85,7 +90,10 @@
 /// application such as when transitioning between view controllers.
 - (void)interstitialDidReceiveAd:(nonnull GADInterstitial *)ad {
     _finishLoading = YES;
-    [ad presentFromRootViewController:self];
+    /// 准备就绪 并且当前 未进行移除动画
+    if (ad.isReady && _isRemoving == NO) {
+        [ad presentFromRootViewController:self];
+    }
 }
 
 /// Called when an interstitial ad request completed without an interstitial to
@@ -101,7 +109,7 @@
 /// application in case the user leaves while the interstitial is on screen (e.g. to visit the App
 /// Store from a link on the interstitial).
 - (void)interstitialWillPresentScreen:(nonnull GADInterstitial *)ad {
-
+    
 }
 
 /// Called when |ad| fails to present.

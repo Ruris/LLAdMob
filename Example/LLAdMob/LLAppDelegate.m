@@ -8,13 +8,16 @@
 
 #import "LLAppDelegate.h"
 #import <LLOpenAd.h>
+#import <LLAdMob.h>
 
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+
     // Override point for customization after application launch.
-    
+    [LLAdMob registAdMob];
     [LLOpenAd registWithIndetifier:@"ca-app-pub-3940256099942544/4411468910"];
 //    [LLOpenAd registWithIndetifier:@""];
     return YES;
