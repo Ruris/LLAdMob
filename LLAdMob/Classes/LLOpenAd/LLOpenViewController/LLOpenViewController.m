@@ -8,6 +8,7 @@
 
 #import "LLOpenViewController.h"
 #import "InterstitialAd.h"
+#import "LLOpenLogoView.h"
 
 @interface LLOpenViewController () <GADInterstitialDelegate>
 
@@ -16,6 +17,9 @@
 
 /// Loading 视图
 @property (nonatomic, strong) UIActivityIndicatorView *loadingView;
+
+/// Logo 视图
+@property (nonatomic, strong) LLOpenLogoView *logoView;
 
 /// 是否加载完成
 @property (nonatomic, assign) BOOL finishLoading;
@@ -51,10 +55,19 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     [self.view addSubview:self.loadingView];
+    [self.view addSubview:self.logoView];
     
     [_loadingView startAnimating];
     _loadingView.center = self.view.center;
 }
+
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    _loadingView.center = CGPointMake(CGRectGetMidX(self.view.bounds),
+                                      CGRectGetMidY(self.view.bounds) - CGRectGetHeight(self.logoView.bounds) / 2);
+}
+
+#pragma mark -
 
 /// 检测是否需要隐藏
 - (void)checkNeedHidden {
@@ -146,6 +159,13 @@
         }
     }
     return _loadingView;
+}
+
+- (LLOpenLogoView *)logoView {
+    if (_logoView == nil) {
+        self.logoView = [[LLOpenLogoView alloc] init];
+    }
+    return _logoView;
 }
 
 @end
