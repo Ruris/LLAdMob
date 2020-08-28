@@ -8,11 +8,12 @@
 
 #import "LLOpenLogoView.h"
 
-static CGFloat kLogiViewHeight = 150.0;
-
 @interface LLOpenLogoView ()
 
+/// logo 图片
 @property (nonatomic, strong) UIImageView *imageView;
+/// 名字
+@property (nonatomic, strong) UILabel *nameLabel;
 
 @end
 
@@ -40,6 +41,7 @@ static CGFloat kLogiViewHeight = 150.0;
     self.backgroundColor = UIColor.whiteColor;
     
     [self addSubview:self.imageView];
+    [self addSubview:self.nameLabel];
     
     CGSize screenSize = UIScreen.mainScreen.bounds.size;
     
@@ -52,7 +54,9 @@ static CGFloat kLogiViewHeight = 150.0;
     CGFloat width = screenSize.width * 0.18;
     _imageView.frame = CGRectMake(0.0, 0.0, width, width);
     _imageView.center = CGPointMake(screenSize.width / 2, height / 2);
-
+    
+    _nameLabel.frame = CGRectMake(0.0, 0.0, screenSize.width, 20.0);
+    _nameLabel.center = CGPointMake(_imageView.center.x, CGRectGetMaxY(_imageView.frame) + 20.0);
 }
 
 - (void)safeAreaInsetsDidChange {
@@ -64,6 +68,8 @@ static CGFloat kLogiViewHeight = 150.0;
                             CGRectGetHeight(self.frame) + self.safeAreaInsets.bottom);
     _imageView.center = CGPointMake(CGRectGetMidX(self.bounds),
                                     CGRectGetMidY(self.bounds) - self.safeAreaInsets.bottom / 2);
+    _nameLabel.center = CGPointMake(_imageView.center.x,
+                                    CGRectGetMaxY(_imageView.frame) + 20.0);
 }
 
 #pragma mark - Getter
@@ -74,6 +80,15 @@ static CGFloat kLogiViewHeight = 150.0;
         _imageView.image = [UIImage imageNamed:@"openLogo"];
     }
     return _imageView;
+}
+
+- (UILabel *)nameLabel {
+    if (_nameLabel == nil) {
+        self.nameLabel = [UILabel new];
+        _nameLabel.text = [NSBundle mainBundle].infoDictionary[@"CFBundleDisplayName"];
+        _nameLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _nameLabel;
 }
 
 @end

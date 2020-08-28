@@ -41,7 +41,7 @@
 		3DEC8A1C07E8A93F1274D701 /* LLAdMob.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LLAdMob.podspec; path = ../LLAdMob.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4E1047EFB1D65E271C13B81D /* libPods-LLAdMob_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLAdMob_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE77E856B4DC3EC9136A1E8 /* Pods-LLAdMob_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Example.release.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* LLAdMob_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLAdMob_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* 测试标题.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "测试标题.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -110,7 +110,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* LLAdMob_Example.app */,
+				6003F58A195388D20070C39A /* 测试标题.app */,
 				6003F5AE195388D20070C39A /* LLAdMob_Tests.xctest */,
 			);
 			name = Products;
@@ -214,7 +214,7 @@
 			);
 			name = LLAdMob_Example;
 			productName = LLAdMob;
-			productReference = 6003F58A195388D20070C39A /* LLAdMob_Example.app */;
+			productReference = 6003F58A195388D20070C39A /* 测试标题.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* LLAdMob_Tests */ = {
@@ -481,7 +481,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "测试标题";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -498,7 +498,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "测试标题";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

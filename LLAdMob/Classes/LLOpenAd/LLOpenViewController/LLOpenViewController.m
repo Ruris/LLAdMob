@@ -80,6 +80,7 @@
 - (void)hiddenAndRemove {
     /// 标记为正在移除
     _isRemoving = YES;
+    _logoView.hidden = true;
     [UIView animateWithDuration:1.0 animations:^{
         self.openWindow.alpha = 0.0;
     } completion:^(BOOL finished) {
