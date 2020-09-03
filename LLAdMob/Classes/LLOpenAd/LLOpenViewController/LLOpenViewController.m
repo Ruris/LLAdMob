@@ -55,17 +55,17 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     [self.view addSubview:self.loadingView];
-    [self.view addSubview:self.logoView];
+//    [self.view addSubview:self.logoView];
     
     [_loadingView startAnimating];
     _loadingView.center = self.view.center;
 }
 
-- (void)viewSafeAreaInsetsDidChange {
-    [super viewSafeAreaInsetsDidChange];
-    _loadingView.center = CGPointMake(CGRectGetMidX(self.view.bounds),
-                                      CGRectGetMidY(self.view.bounds) - CGRectGetHeight(self.logoView.bounds) / 2);
-}
+//- (void)viewSafeAreaInsetsDidChange {
+//    [super viewSafeAreaInsetsDidChange];
+//    _loadingView.center = CGPointMake(CGRectGetMidX(self.view.bounds),
+//                                      CGRectGetMidY(self.view.bounds) - CGRectGetHeight(self.logoView.bounds) / 2);
+//}
 
 #pragma mark -
 
