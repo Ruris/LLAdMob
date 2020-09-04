@@ -28,6 +28,8 @@ PODS:
     - GoogleUtilities/Logger
   - LLAdMob (0.1.0):
     - Google-Mobile-Ads-SDK
+    - Masonry
+  - Masonry (1.1.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -44,6 +46,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - Masonry
     - nanopb
     - PromisesObjC
 
@@ -56,7 +59,8 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 3def7652b1f5b5a576178dc332e2a36a260fbef6
   GoogleUserMessagingPlatform: 9dc714d2e1f0aa727b9cc52d266dc1b155f4c3f2
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  LLAdMob: 34cd9a57d0b3fd3973693c7d7cc096686bd93d71
+  LLAdMob: feb432ef474c01950817d272d01514a8202c7247
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
