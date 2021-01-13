@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LLOpenAd : NSObject
 
-+ (void)registWithIndetifier:(NSString *)identifier;
+/// 注册插页开屏广告
+/// @param identifier 广告标识符
++ (void)registWithInterstitialIndetifier:(NSString *)identifier;
+
+/// 注册原生开屏广告
+/// @param identifier 广告标识符
++ (void)registWithOpenAdIndetifier:(NSString *)identifier complete:(UIViewController *(^)(NSError *error))complete;
 
 @end
 

@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLoadingViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLOpenViewController : UIViewController
+@interface LLOpenViewController : LLoadingViewController
 
 /// 标识符
 @property (nonatomic, strong) NSString *identifier;
-
-/// 首屏 window
-@property (nonatomic, strong) UIWindow *openWindow;
 
 @end
 

@@ -9,10 +9,6 @@
 #import "LLAdMob.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_14_0
-//#import <AppTrackingTransparency/ATTrackingManager.h>
-#endif
-
 @implementation LLAdMob
 
 + (void)registAdMob {
@@ -23,18 +19,22 @@
    
     /// iOS 14 AppTrackingTransparency 相关适配
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_14_0
-//    if (@available(iOS 14, *)) {
-//        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-//
-//        }];
-//    } else {
-//        // Fallback on earlier versions
-//    }
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 #endif
     
     [[GADMobileAds sharedInstance] startWithCompletionHandler:^(GADInitializationStatus * _Nonnull status) {
             
     }];
+}
+
++ (void)requestTrackingAuthorizationWithCompletionHandler:(void(^)(ATTrackingManagerAuthorizationStatus status))completion API_AVAILABLE(ios(14)) {
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:completion];
 }
 
 @end

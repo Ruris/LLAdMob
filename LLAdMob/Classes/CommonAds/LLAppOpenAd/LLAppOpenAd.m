@@ -1,70 +1,47 @@
 //
-//  LLOpenViewController.m
+//  LLAppOpenAd.m
 //  GoogleUtilities
 //
 //  Created by ZHK on 2020/8/24.
+//  
 //
-//
 
-#import "LLOpenViewController.h"
-#import "InterstitialAd.h"
-#import "LLOpenLogoView.h"
+#import "LLAppOpenAd.h"
 
-@interface LLOpenViewController () <GADInterstitialDelegate>
+@interface LLAppOpenAd () <GADInterstitialDelegate>
 
-/// 插页
-@property (nonatomic, strong) GADInterstitial *interstitial;
-
-/// Loading 视图
-//@property (nonatomic, strong) UIActivityIndicatorView *loadingView;
-
-/// Logo 视图
-//@property (nonatomic, strong) LLOpenLogoView *logoView;
-
-/// 是否加载完成
-@property (nonatomic, assign) BOOL finishLoading;
-
-/// 是否正在移除
-//@property (nonatomic, assign) BOOL isRemoving;
+@property (nonatomic, copy) InterstitialLoadComplete complete;
+@property (nonatomic, strong) GADAppOpenAd *appOpenAd;
+@property (nonatomic, copy) NSString *identifier;
 
 @end
 
-@implementation LLOpenViewController
+@implementation LLAppOpenAd
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-//    [self setupUI];
++ (instancetype)openAdWithIdnentifier:(NSString *)identifier complete:(nonnull InterstitialLoadComplete)complete {
+    LLAppOpenAd *ad = [[LLAppOpenAd alloc] init];
+    ad.complete = complete;
+    ad.identifier = identifier;
+    [ad loadAppOpenAd];
+    return ad;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (_identifier == nil) {
-        [self hiddenAndRemove];
+- (void)loadAppOpenAd {
+    [GADAppOpenAd loadWithAdUnitID:_identifier request:[GADRequest request] orientation:UIInterfaceOrientationPortrait completionHandler:^(GADAppOpenAd * _Nullable appOpenAd, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %s %@", __func__, error);
+        }
+        self.appOpenAd = appOpenAd;
+        [appOpenAd presentFromRootViewController:self.complete(error)];
+    }];
+}
+
+- (void)tryToPresentAd:(UIViewController *)viewController {
+    if (_appOpenAd) {
+        [_appOpenAd presentFromRootViewController:viewController];
     } else {
-        [self loadInterstitialWithIdentifier:_identifier];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self checkNeedHidden];
-        });
+        [self loadAppOpenAd];
     }
-}
-
-#pragma mark -
-
-/// 检测是否需要隐藏
-- (void)checkNeedHidden {
-    if (_finishLoading == NO) {
-        [self hiddenAndRemove];
-    }
-}
-
-#pragma mark - Ad
-
-/// 加载插页
-/// @param identifier 插页标识符
-- (void)loadInterstitialWithIdentifier:(NSString *)identifier {
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:identifier];
-    _interstitial.delegate = self;
-    [_interstitial loadRequest:[GADRequest request]];
 }
 
 #pragma mark Ad Request Lifecycle Notifications
@@ -72,17 +49,17 @@
 /// Called when an interstitial ad request succeeded. Show it at the next transition point in your
 /// application such as when transitioning between view controllers.
 - (void)interstitialDidReceiveAd:(nonnull GADInterstitial *)ad {
-    _finishLoading = YES;
-    /// 准备就绪 并且当前 未进行移除动画
-    if (ad.isReady && self.isRemoving == NO) {
-        [ad presentFromRootViewController:self];
+    if (_complete) {
+        [ad presentFromRootViewController:_complete(nil)];
     }
 }
 
 /// Called when an interstitial ad request completed without an interstitial to
 /// show. This is common since interstitials are shown sparingly to users.
 - (void)interstitial:(nonnull GADInterstitial *)ad didFailToReceiveAdWithError:(nonnull GADRequestError *)error {
-    [self hiddenAndRemove];
+    if (_complete) {
+        [ad presentFromRootViewController:_complete(error)];
+    }
 }
 
 #pragma mark Display-Time Lifecycle Notifications
@@ -92,24 +69,22 @@
 /// application in case the user leaves while the interstitial is on screen (e.g. to visit the App
 /// Store from a link on the interstitial).
 - (void)interstitialWillPresentScreen:(nonnull GADInterstitial *)ad {
-    NSLog(@"%s", __func__);
+    
 }
 
 /// Called when |ad| fails to present.
 - (void)interstitialDidFailToPresentScreen:(nonnull GADInterstitial *)ad {
-    [self hiddenAndRemove];
-    NSLog(@"%s", __func__);
+    
 }
 
 /// Called before the interstitial is to be animated off the screen.
 - (void)interstitialWillDismissScreen:(nonnull GADInterstitial *)ad {
-    [self hiddenAndRemove];
-    NSLog(@"%s", __func__);
+    
 }
 
 /// Called just after dismissing an interstitial and it has animated off the screen.
 - (void)interstitialDidDismissScreen:(nonnull GADInterstitial *)ad {
-    NSLog(@"%s", __func__);
+    
 }
 
 /// Called just before the application will background or terminate because the user clicked on an
@@ -117,7 +92,7 @@
 /// UIApplicationDelegate methods, like applicationDidEnterBackground:, will be called immediately
 /// before this.
 - (void)interstitialWillLeaveApplication:(nonnull GADInterstitial *)ad {
-    NSLog(@"%s", __func__);
+    
 }
 
 @end

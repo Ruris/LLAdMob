@@ -26,7 +26,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.7.2)"
   - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
-  - LLAdMob (0.1.0):
+  - LLAdMob (1.0.1):
     - Google-Mobile-Ads-SDK
     - Masonry
   - Masonry (1.1.0)
@@ -59,7 +59,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-  LLAdMob: 2cf1e16e5109eb2a5a14e84c8f18ca0bd56e7421
+  LLAdMob: dc5b42308d402bf7d0298f271d431bc903f511e6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
