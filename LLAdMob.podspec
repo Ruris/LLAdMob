@@ -29,7 +29,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
-
+  s.static_framework = true
   s.source_files = 'LLAdMob/Classes/**/*'
   
   # s.resource_bundles = {
