@@ -15,8 +15,7 @@
 
 @implementation LLViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = UIColor.whiteColor;
@@ -24,8 +23,7 @@
     [LLAlertAd registWithIndetifier:@"ca-app-pub-3940256099942544/3986624511"];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

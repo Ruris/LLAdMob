@@ -13,15 +13,15 @@
 @implementation LLAlertAd
 
 + (void)registWithIndetifier:(NSString *)identifier {
+    /// Ad View.
     LLAlertAdView *view = [[LLAlertAdView alloc] init];
+    /// Ad Window.
     LLAlertWindow *window = [[LLAlertWindow alloc] init];
     
     view.onWindow = window;
     view.identifier = identifier;
     [window addSubview:view];
     window.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.2f];
-    
-    [window makeKeyAndVisible];
 }
 
 @end

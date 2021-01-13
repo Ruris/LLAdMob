@@ -98,6 +98,8 @@
         make.bottom.mas_equalTo(-15.0 * scale);
         make.size.mas_equalTo(CGSizeMake(90.0 * scale, 35.0 * scale));
     }];
+    
+    self.hidden = YES;
 }
 
 - (void)didMoveToSuperview {
@@ -107,6 +109,11 @@
     }
     [self setupUI];
     [self.nativeAdLoader loadAd];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.isHidden) {
+            [self removeFromSuperview];
+        }
+    });
 }
 
 #pragma mark - LLNativeAdDelegate
@@ -117,6 +124,8 @@
         return;
     }
     self.nativeAd = nativeAd;
+    self.hidden = NO;
+    [self.onWindow makeKeyAndVisible];
     
     _aiconView.image = nativeAd.icon.image;
     _headLineLabel.text = nativeAd.headline;
