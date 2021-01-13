@@ -17,7 +17,7 @@ pod 'LLAdMob', :git => 'https://github.com/Ruris/LLAdMob.git', :tag => s.version
 ### iOS14 SKAdNetwork
 
 在 `Info.plist` 文件中，添加如下字段和值.
-```
+```xml
 <key>SKAdNetworkItems</key>
   <array>
     <dict>
