@@ -9,7 +9,7 @@ pod 'LLAdMob', :git => 'https://github.com/Ruris/LLAdMob.git', :tag => s.version
 ### 基本配置
 
 在 `Info.plist` 文件中，添加一个字符串值为您的 AdMob 应用 ID 的 GADApplicationIdentifier.
-```
+```xml
 <key>GADApplicationIdentifier</key>
 <string>ca-app-pub-3940256099942544~1458002511</string>
 ```
