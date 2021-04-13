@@ -34,7 +34,14 @@
 }
 
 + (void)requestTrackingAuthorizationWithCompletionHandler:(void(^)(ATTrackingManagerAuthorizationStatus status))completion API_AVAILABLE(ios(14)) {
-    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:completion];
+    ATTrackingManagerAuthorizationStatus status = ATTrackingManager.trackingAuthorizationStatus;
+    if (status == ATTrackingManagerAuthorizationStatusNotDetermined) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:completion];
+    } else {
+        if (completion != nil) {
+            completion(status);
+        }
+    }
 }
 
 @end

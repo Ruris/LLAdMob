@@ -18,6 +18,13 @@
 
     // Override point for customization after application launch.
     [LLAdMob registAdMob];
+    if (@available(iOS 14, *)) {
+        [LLAdMob requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            NSLog(@"ATTrackingManagerAuthorizationStatus: %ld", status);
+        }];
+    } else {
+        // Fallback on earlier versions
+    }
 //    [LLOpenAd registWithInterstitialIndetifier:@"ca-app-pub-3940256099942544/4411468910"];
 //    [LLAppOpenAd appOpenAdWithIdnentifier:@"ca-app-pub-3940256099942544/5662855259" complete:^UIViewController * _Nullable(NSError * _Nullable error) {
 //        return self.window.rootViewController;
