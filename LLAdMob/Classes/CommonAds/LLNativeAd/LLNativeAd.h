@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class GADUnifiedNativeAd;
+@class GADNativeAd;
 @protocol LLNativeAdDelegate <NSObject>
 
-- (void)didReceiveNativeAd:(nullable GADUnifiedNativeAd *)nativeAd error:(nullable NSError *)error;
+- (void)didReceiveNativeAd:(nullable GADNativeAd *)nativeAd error:(nullable NSError *)error;
 
 @end
 

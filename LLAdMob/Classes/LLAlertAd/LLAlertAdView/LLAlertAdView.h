@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLAlertAdView : GADUnifiedNativeAdView
+@interface LLAlertAdView : GADNativeAdView
 
 /// 标识符
 @property (nonatomic, strong) NSString *identifier;

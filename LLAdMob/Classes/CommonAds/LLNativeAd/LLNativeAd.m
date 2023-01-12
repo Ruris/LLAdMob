@@ -9,7 +9,7 @@
 #import "LLNativeAd.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface LLNativeAd () <GADAdLoaderDelegate, GADVideoControllerDelegate, GADUnifiedNativeAdLoaderDelegate>
+@interface LLNativeAd () <GADNativeAdLoaderDelegate, GADVideoControllerDelegate>
 
 @property (nonatomic, strong) GADAdLoader *adLoader;
 
@@ -23,7 +23,7 @@
 
 + (instancetype)nativeWithIdentifier:(nonnull NSString *)identifier {
 #if TARGET_IPHONE_SIMULATOR
-    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ kGADSimulatorID ];
+//    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ kGADSimulatorID ];
 #endif
 #if DEBUG
     GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"5f3e932703d16c15218490ad2e0152f0" ];
@@ -43,7 +43,7 @@
         mediaOptions.mediaAspectRatio = GADMediaAspectRatioPortrait;
         self.adLoader = [[GADAdLoader alloc] initWithAdUnitID:_identifier
                                            rootViewController:nil
-                                                      adTypes:@[kGADAdLoaderAdTypeUnifiedNative]
+                                                      adTypes:@[GADAdLoaderAdTypeNative]
                                                       options:@[mediaOptions, videoOptions]];
         _adLoader.delegate = self;
     }
@@ -53,7 +53,7 @@
 #pragma mark - GADAdLoaderDelegate
 
 /// Called when adLoader fails to load an ad.
-- (void)adLoader:(nonnull GADAdLoader *)adLoader didFailToReceiveAdWithError:(nonnull GADRequestError *)error {
+- (void)adLoader:(nonnull GADAdLoader *)adLoader didFailToReceiveAdWithError:(nonnull NSError *)error {
     if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
         [_delegate didReceiveNativeAd:nil error:error];
     }
@@ -64,6 +64,12 @@
 #endif
 }
 
+- (void)adLoader:(nonnull GADAdLoader *)adLoader didReceiveNativeAd:(nonnull GADNativeAd *)nativeAd {
+    if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
+        [_delegate didReceiveNativeAd:nativeAd error:nil];
+    }
+}
+
 /// Called after adLoader has finished loading.
 - (void)adLoaderDidFinishLoading:(nonnull GADAdLoader *)adLoader {
 #if DEBUG
@@ -71,45 +77,45 @@
 #endif
 }
 
-#pragma mark - GADUnifiedNativeAdLoaderDelegate
-
-- (void)adLoader:(GADAdLoader *)adLoader didReceiveNativeAd:(GADUnifiedNativeAd *)nativeAd {
-    if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
-        [_delegate didReceiveNativeAd:nativeAd error:nil];
-    }
-}
-
-- (void)adLoader:(GADAdLoader *)adLoader didReceiveUnifiedNativeAd:(nonnull GADUnifiedNativeAd *)nativeAd {
-    if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
-        [_delegate didReceiveNativeAd:nativeAd error:nil];
-    }
-}
-
-#pragma mark - GADVideoControllerDelegate
-
-/// Tells the delegate that the video controller has began or resumed playing a video.
-- (void)videoControllerDidPlayVideo:(nonnull GADVideoController *)videoController {
-    
-}
-
-/// Tells the delegate that the video controller has paused video.
-- (void)videoControllerDidPauseVideo:(nonnull GADVideoController *)videoController {
-    
-}
-
-/// Tells the delegate that the video controller's video playback has ended.
-- (void)videoControllerDidEndVideoPlayback:(nonnull GADVideoController *)videoController {
-    
-}
-
-/// Tells the delegate that the video controller has muted video.
-- (void)videoControllerDidMuteVideo:(nonnull GADVideoController *)videoController {
-    
-}
-
-/// Tells the delegate that the video controller has unmuted video.
-- (void)videoControllerDidUnmuteVideo:(nonnull GADVideoController *)videoController {
-    
-}
+//#pragma mark - GADUnifiedNativeAdLoaderDelegate
+//
+//- (void)adLoader:(GADAdLoader *)adLoader didReceiveNativeAd:(GADUnifiedNativeAd *)nativeAd {
+//    if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
+//        [_delegate didReceiveNativeAd:nativeAd error:nil];
+//    }
+//}
+//
+//- (void)adLoader:(GADAdLoader *)adLoader didReceiveUnifiedNativeAd:(nonnull GADUnifiedNativeAd *)nativeAd {
+//    if ([_delegate respondsToSelector:@selector(didReceiveNativeAd:error:)]) {
+//        [_delegate didReceiveNativeAd:nativeAd error:nil];
+//    }
+//}
+//
+//#pragma mark - GADVideoControllerDelegate
+//
+///// Tells the delegate that the video controller has began or resumed playing a video.
+//- (void)videoControllerDidPlayVideo:(nonnull GADVideoController *)videoController {
+//
+//}
+//
+///// Tells the delegate that the video controller has paused video.
+//- (void)videoControllerDidPauseVideo:(nonnull GADVideoController *)videoController {
+//
+//}
+//
+///// Tells the delegate that the video controller's video playback has ended.
+//- (void)videoControllerDidEndVideoPlayback:(nonnull GADVideoController *)videoController {
+//
+//}
+//
+///// Tells the delegate that the video controller has muted video.
+//- (void)videoControllerDidMuteVideo:(nonnull GADVideoController *)videoController {
+//
+//}
+//
+///// Tells the delegate that the video controller has unmuted video.
+//- (void)videoControllerDidUnmuteVideo:(nonnull GADVideoController *)videoController {
+//
+//}
 
 @end

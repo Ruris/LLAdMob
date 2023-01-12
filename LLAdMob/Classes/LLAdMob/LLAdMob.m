@@ -14,7 +14,7 @@
 + (void)registAdMob {
     
 #if TARGET_IPHONE_SIMULATOR
-    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ kGADSimulatorID ];
+//    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ kGADSimulatorID ];
 #endif
    
     /// iOS 14 AppTrackingTransparency 相关适配

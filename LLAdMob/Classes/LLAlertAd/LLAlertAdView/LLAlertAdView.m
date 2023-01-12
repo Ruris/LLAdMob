@@ -118,7 +118,7 @@
 
 #pragma mark - LLNativeAdDelegate
 
-- (void)didReceiveNativeAd:(GADUnifiedNativeAd *)nativeAd error:(NSError *)error {
+- (void)didReceiveNativeAd:(GADNativeAd *)nativeAd error:(NSError *)error {
     if (nativeAd == nil) {
         [self removeFromSuperview];
         return;
@@ -160,7 +160,7 @@
     
     [nativeAd registerClickConfirmingView:self.detailButton];
     [nativeAd registerAdView:self clickableAssetViews:@{
-        GADUnifiedNativeCallToActionAsset : self.detailButton
+        GADNativeCallToActionAsset : self.detailButton
     } nonclickableAssetViews:@{
         
     }];
