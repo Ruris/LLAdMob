@@ -10,12 +10,13 @@
 #import <LLOpenAd.h>
 #import <LLAdMob.h>
 #import <LLAppOpenAd.h>
+#import <GoogleMobileAds/GADMobileAds.h>
 
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-
+    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"185ac8d37a43bf58e4d022fc9882759d" ];
     // Override point for customization after application launch.
     [LLAdMob registAdMob];
     if (@available(iOS 14, *)) {
@@ -26,9 +27,11 @@
         // Fallback on earlier versions
     }
 //    [LLOpenAd registWithInterstitialIndetifier:@"ca-app-pub-3940256099942544/4411468910"];
-//    [LLAppOpenAd appOpenAdWithIdnentifier:@"ca-app-pub-3940256099942544/5662855259" complete:^UIViewController * _Nullable(NSError * _Nullable error) {
-//        return self.window.rootViewController;
-//    }];
+    
+    
+//    LLAppOpenAd app
+    
+//    LLAppOpenAd a
     
     [LLOpenAd registWithOpenAdIndetifier:@"ca-app-pub-3940256099942544/5662855259" complete:^UIViewController * _Nonnull(NSError * _Nonnull error) {
         return self.window.rootViewController;
