@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLAdMob'
-  s.version          = '9.4.0'
+  s.version          = '9.4.0.1'
   s.summary          = 'A short description of LLAdMob.'
 
 # This description is used to generate tags and improve search results.

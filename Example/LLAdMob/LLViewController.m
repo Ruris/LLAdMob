@@ -8,7 +8,9 @@
 
 #import "LLViewController.h"
 #import <LLAlertAd.h>
-#include <LLOpenAd.h>
+#import <LLOpenAd.h>
+#import <LLRewardAd.h>
+#import <MBProgressHUD.h>
 
 @interface LLViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -68,6 +70,17 @@
     else if ([name isEqual:@"LLOpenAd-Interstitial"]) {
         [LLOpenAd registWithInterstitialIndetifier:@"ca-app-pub-3940256099942544/4411468910"];
     }
+    else if ([name isEqual:@"LLRewardAd"]) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [LLRewardAd showWithIdentifier:@"ca-app-pub-3940256099942544/1712485313" target:self loaded:^{
+            NSLog(@"Loaded");
+            [hud hideAnimated:YES];
+        } reward:^{
+            NSLog(@"Reward the user!");
+        } failure:^(NSError * _Nonnull error) {
+            NSLog(@"Reward Error: %@", error);
+        }];
+    }
 }
 
 #pragma mark - Getter
@@ -78,6 +91,7 @@
             @"LLAlertAd",
             @"LLOpenAd-Interstitial",
             @"LLOpenAd-Native",
+            @"LLRewardAd"
         ];
     }
     return _titles;
