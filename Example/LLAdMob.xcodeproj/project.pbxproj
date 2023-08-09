@@ -22,6 +22,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		91DE08BE2A838EE00017C8F0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DE08BD2A838EE00017C8F0 /* StoreKit.framework */; };
 		9363B251439C6B247065DD6D /* libPods-LLAdMob_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E1047EFB1D65E271C13B81D /* libPods-LLAdMob_Tests.a */; };
 		F9E7BB3B70B7B1ACAD2FAB8B /* libPods-LLAdMob_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C00F94364CEE018664ECFAD /* libPods-LLAdMob_Example.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C00F94364CEE018664ECFAD /* libPods-LLAdMob_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LLAdMob_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		91DE08BD2A838EE00017C8F0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CE5CDA2D14D10963EC7BA08B /* Pods-LLAdMob_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Example.debug.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Example/Pods-LLAdMob_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D33FE55406859F9AC7FC26E9 /* Pods-LLAdMob_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLAdMob_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LLAdMob_Tests/Pods-LLAdMob_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EFBBE925D7AD4D7240061007 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			files = (
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
+				91DE08BE2A838EE00017C8F0 /* StoreKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				F9E7BB3B70B7B1ACAD2FAB8B /* libPods-LLAdMob_Example.a in Frameworks */,
 			);
@@ -119,6 +122,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91DE08BD2A838EE00017C8F0 /* StoreKit.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -479,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XXU9J3UXC9;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LLAdMob/LLAdMob-Prefix.pch";
 				INFOPLIST_FILE = "LLAdMob/LLAdMob-Info.plist";
@@ -497,6 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XXU9J3UXC9;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LLAdMob/LLAdMob-Prefix.pch";
 				INFOPLIST_FILE = "LLAdMob/LLAdMob-Info.plist";

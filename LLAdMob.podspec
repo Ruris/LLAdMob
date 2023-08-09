@@ -39,6 +39,6 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
-  s.dependency 'Google-Mobile-Ads-SDK', '~> 9.4.0'
+  s.dependency 'Google-Mobile-Ads-SDK', '~> 10.3.0'
   s.dependency 'Masonry', '~> 1.1.0'
 end
